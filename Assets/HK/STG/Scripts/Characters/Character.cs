@@ -1,5 +1,6 @@
 ﻿using HK.STG.Events;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 
 namespace HK.STG.CharacterController
@@ -18,11 +19,21 @@ namespace HK.STG.CharacterController
             this.Broker.Receive<Move>()
                 .Subscribe(this.OnMove)
                 .AddTo(this);
+
+            this.OnTriggerEnter2DAsObservable()
+                .Where(_ => this.isActiveAndEnabled)
+                .Subscribe(this.OnHit)
+                .AddTo(this);
         }
 
         private void OnMove(Move move)
         {
             this.CachedTransform.position += move.Velocity;
+        }
+
+        private void OnHit(Collider2D collider)
+        {
+            this.Broker.Publish(Hit.Get(collider));
         }
     }
 }
