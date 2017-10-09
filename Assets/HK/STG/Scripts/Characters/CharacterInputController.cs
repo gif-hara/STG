@@ -1,21 +1,21 @@
-﻿using HK.STG.InputSystems;
+﻿using HK.STG.Events;
+using HK.STG.InputSystems;
 using UniRx;
 using UnityEngine;
 
 namespace HK.STG.CharacterController
 {
+    [RequireComponent(typeof(Character))]
     public sealed class CharacterInputController : MonoBehaviour
     {
         void Awake()
         {
+            var character = this.GetComponent<Character>();
             InputSystem.DirectionAsObservable()
                 .SubscribeWithState(this, (d, _this) =>
                 {
-                    var position = _this.transform.position;
-                    var direction = d.normalized;
-                    position.x += direction.x;
-                    position.y += direction.y;
-                    _this.transform.position = position;
+                    d = d.normalized;
+                    character.Broker.Publish(Move.Get(new Vector3(d.x, d.y, 0.0f)));
                 })
                 .AddTo(this);
         }
