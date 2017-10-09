@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HK.STG.CharacterController
 {
-    public sealed class PlayerInputController : MonoBehaviour
+    public sealed class CharacterInputController : MonoBehaviour
     {
         void Awake()
         {

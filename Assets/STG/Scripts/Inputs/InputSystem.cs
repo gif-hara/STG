@@ -11,11 +11,16 @@ namespace HK.STG.InputSystems
         
         private Subject<Vector2> direction = new Subject<Vector2>();
         
-        private Vector2 cachedInputDirection = new Vector2();
-
+        private Subject<bool> decision = new Subject<bool>();
+        
         public static IObservable<Vector2> DirectionAsObservable()
         {
             return Instance.direction;
+        }
+
+        public static IObservable<bool> DecisionAsObservable()
+        {
+            return Instance.decision;
         }
 
         void Awake()
@@ -26,15 +31,8 @@ namespace HK.STG.InputSystems
             this.UpdateAsObservable()
                 .SubscribeWithState(this, (_, _this) =>
                 {
-                    _this.cachedInputDirection.x =
-                        Input.GetKey(KeyCode.LeftArrow) ? -1.0f :
-                            Input.GetKey(KeyCode.RightArrow) ? 1.0f :
-                                0.0f;
-                    _this.cachedInputDirection.y =
-                        Input.GetKey(KeyCode.DownArrow) ? -1.0f :
-                            Input.GetKey(KeyCode.UpArrow) ? 1.0f :
-                                0.0f;
-                    _this.direction.OnNext(_this.cachedInputDirection);
+                    _this.UpdateDirection();
+                    _this.UpdateDecision();
                 });
         }
 
@@ -42,6 +40,20 @@ namespace HK.STG.InputSystems
         {
             Assert.IsNotNull(Instance);
             Instance = null;
+        }
+
+        private void UpdateDirection()
+        {
+            var inputDirection = new Vector2(
+                Input.GetKey(KeyCode.LeftArrow) ? -1.0f : Input.GetKey(KeyCode.RightArrow) ? 1.0f : 0.0f,
+                Input.GetKey(KeyCode.DownArrow) ? -1.0f : Input.GetKey(KeyCode.UpArrow) ? 1.0f : 0.0f
+            );
+            this.direction.OnNext(inputDirection);
+        }
+
+        private void UpdateDecision()
+        {
+            this.decision.OnNext(Input.GetKey(KeyCode.Z));
         }
     }
 }
