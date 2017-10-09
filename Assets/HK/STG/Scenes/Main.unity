@@ -218,6 +218,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 264618405}
+  - component: {fileID: 264618406}
   m_Layer: 0
   m_Name: GameWorld
   m_TagString: Untagged
@@ -237,9 +238,22 @@ Transform:
   m_Children:
   - {fileID: 684736745}
   - {fileID: 221882249}
+  - {fileID: 614776457}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &264618406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 264618404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c908459517f4691afa8eaaf7756364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldRange: {x: 100, y: 100}
 --- !u!1 &475795677
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +369,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &614776456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 614776457}
+  - component: {fileID: 614776458}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &614776457
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614776456}
+  m_LocalRotation: {x: 0, y: 0, z: 0.16728498, w: 0.9859086}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 264618405}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.26}
+--- !u!114 &614776458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614776456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1994a8b01157b41c1b784b47ac677400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 114643857332837522, guid: 88bf0dfd6767946879f8db9d401992c2,
+    type: 2}
+  speed: 1
+  waitFrame: 10
 --- !u!1 &684736740
 GameObject:
   m_ObjectHideFlags: 0

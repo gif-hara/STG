@@ -16,7 +16,9 @@ namespace HK.STG.ObjectPools
 
         protected override Character CreateInstance()
         {
-            return Object.Instantiate(this.character);
+            var instance = Object.Instantiate(this.character);
+            instance.Pool = this;
+            return instance;
         }
 
         private static Dictionary<Character, CharacterPool> cachedPools = new Dictionary<Character, CharacterPool>();

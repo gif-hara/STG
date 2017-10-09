@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 50576634344455752}
   - component: {fileID: 58116984821674124}
   - component: {fileID: 114643857332837522}
-  - component: {fileID: 114016733145106500}
   m_Layer: 0
   m_Name: EnemyBullet0
   m_TagString: Untagged
@@ -126,17 +125,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114016733145106500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399122936658540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c08a2d2550942bf9fe1085b6f11bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114643857332837522
 MonoBehaviour:
   m_ObjectHideFlags: 1

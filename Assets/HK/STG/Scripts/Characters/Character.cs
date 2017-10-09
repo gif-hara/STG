@@ -1,4 +1,5 @@
 ﻿using HK.STG.Events;
+using HK.STG.ObjectPools;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace HK.STG.CharacterController
         public IMessageBroker Broker { private set; get; }
         
         public Transform CachedTransform { private set; get; }
+        
+        public CharacterPool Pool { set; get; }
 
         void Awake()
         {
@@ -24,6 +27,18 @@ namespace HK.STG.CharacterController
                 .Where(_ => this.isActiveAndEnabled)
                 .Subscribe(this.OnHit)
                 .AddTo(this);
+        }
+
+        public void PoolOrDestroy()
+        {
+            if (this.Pool == null)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                this.Pool.Return(this);
+            }
         }
 
         private void OnMove(Move move)
