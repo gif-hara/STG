@@ -9,7 +9,7 @@ namespace HK.STG.Events
         
         public Vector3 Velocity { get { return this.param1; } }
 
-        public static Move GetCached(Vector3 velocity)
+        public static Move GetCache(Vector3 velocity)
         {
             cache.param1 = velocity;
 

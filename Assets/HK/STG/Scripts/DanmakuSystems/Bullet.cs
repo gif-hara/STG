@@ -44,7 +44,7 @@ namespace HK.STG.DanmakuSystems
 
         public void UpdateFromUpdater()
         {
-            this.Character.Broker.Publish(Move.GetCached(this.Character.CachedTransform.up * this.speed));
+            this.Character.Broker.Publish(Move.GetCache(this.Character.CachedTransform.up * this.speed));
         }
         
         public void PoolOrDestroy()
