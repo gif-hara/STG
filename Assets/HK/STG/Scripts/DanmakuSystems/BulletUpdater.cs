@@ -11,7 +11,7 @@ namespace HK.STG.DanmakuSystems
         private static BulletUpdater instance;
 
         private List<Bullet> bullets = new List<Bullet>();
-
+        
         void Awake()
         {
             Assert.IsNull(instance);
@@ -45,6 +45,12 @@ namespace HK.STG.DanmakuSystems
 
         public static void Remove(Bullet bullet)
         {
+            #if UNITY_EDITOR
+            if (instance == null)
+            {
+                return;
+            }
+            #endif
             instance.bullets.Remove(bullet);
         }
     }
