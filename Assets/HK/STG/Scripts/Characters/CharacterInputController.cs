@@ -15,7 +15,7 @@ namespace HK.STG.CharacterControllers
                 .SubscribeWithState(this, (d, _this) =>
                 {
                     d = d.normalized;
-                    character.Broker.Publish(Move.Get(new Vector3(d.x, d.y, 0.0f)));
+                    character.Broker.Publish(Move.GetCached(new Vector3(d.x, d.y, 0.0f)));
                 })
                 .AddTo(this);
         }
