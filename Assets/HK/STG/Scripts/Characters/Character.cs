@@ -1,19 +1,22 @@
-﻿using HK.STG.Events;
+﻿using System.Collections.Generic;
+using HK.STG.Events;
 using HK.STG.ObjectPools;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 
-namespace HK.STG.CharacterController
+namespace HK.STG.CharacterControllers
 {
     public sealed class Character : MonoBehaviour
     {
+        private static readonly List<Character> instances = new List<Character>();
+        
+        public static List<Character> Instances { get { return instances; } }
+        
         public IMessageBroker Broker { private set; get; }
         
         public Transform CachedTransform { private set; get; }
         
-        public CharacterPool Pool { set; get; }
-
         void Awake()
         {
             this.Broker = new MessageBroker();
@@ -29,16 +32,14 @@ namespace HK.STG.CharacterController
                 .AddTo(this);
         }
 
-        public void PoolOrDestroy()
+        void OnEnable()
         {
-            if (this.Pool == null)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                this.Pool.Return(this);
-            }
+            instances.Add(this);
+        }
+
+        void OnDisable()
+        {
+            instances.Remove(this);
         }
 
         private void OnMove(Move move)

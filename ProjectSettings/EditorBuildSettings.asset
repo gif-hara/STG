@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/HK/STG/Scenes/Main.unity
+    guid: 02bd43f3778a74ce58331c3cd9731dff

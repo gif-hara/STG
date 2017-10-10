@@ -3,7 +3,7 @@ using HK.STG.InputSystems;
 using UniRx;
 using UnityEngine;
 
-namespace HK.STG.CharacterController
+namespace HK.STG.CharacterControllers
 {
     [RequireComponent(typeof(Character))]
     public sealed class CharacterInputController : MonoBehaviour

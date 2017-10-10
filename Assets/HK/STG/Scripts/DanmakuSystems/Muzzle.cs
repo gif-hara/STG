@@ -1,7 +1,6 @@
-﻿using HK.STG.CharacterController;
-using HK.STG.Extensions;
-using HK.STG.ObjectPools;
+﻿using HK.STG.ObjectPools;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 
 namespace HK.STG.DanmakuSystems
@@ -9,13 +8,16 @@ namespace HK.STG.DanmakuSystems
     public sealed class Muzzle : MonoBehaviour
     {
         [SerializeField]
-        private Character bulletPrefab;
+        private Bullet bulletPrefab;
 
         [SerializeField]
         private float speed;
 
         [SerializeField]
         private int waitFrame;
+
+        [SerializeField]
+        private float rotateAxis;
 
         private Transform cachedTransform;
 
@@ -24,12 +26,17 @@ namespace HK.STG.DanmakuSystems
             this.cachedTransform = this.transform;
             Observable.IntervalFrame(this.waitFrame)
                 .Subscribe(_ => this.Fire());
+            this.UpdateAsObservable()
+                .SubscribeWithState(this, (_, _this) =>
+                {
+                    _this.cachedTransform.rotation *= Quaternion.AngleAxis(_this.rotateAxis, Vector3.forward);
+                });
         }
         
         public void Fire()
         {
-            var bullet = CharacterPool.Rent(this.bulletPrefab);
-            bullet.SetupAsBullet(this.cachedTransform, this.speed);
+            var bullet = BulletPool.Rent(this.bulletPrefab);
+            bullet.Setup(null, this.cachedTransform, this.speed);
         }
     }
 }
