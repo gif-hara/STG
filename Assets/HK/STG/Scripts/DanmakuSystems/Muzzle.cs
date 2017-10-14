@@ -31,7 +31,7 @@ namespace HK.STG.DanmakuSystems
 
         void Update()
         {
-            this.coolTime++;
+            this.coolTime--;
         }
 
         public void Attach(IMessageBroker broker, MuzzleParameter parameter)
@@ -42,12 +42,16 @@ namespace HK.STG.DanmakuSystems
         
         public void Attach(IMessageBroker broker)
         {
+            this.parameterIndex = 0;
+            this.coolTime = this.parameter.InitialCoolTime;
+            
             if (this.fireStream != null)
             {
-                this.fireStream.Dispose();
+                return;
             }
+            
             this.fireStream = broker.Receive<Fire>()
-                .Where(_ => this.coolTime >= this.CurrentParameter.CoolTime)
+                .Where(_ => this.coolTime <= 0)
                 .SubscribeWithState(this, (_, _this) =>
                 {
                     _this.Fire();
@@ -60,9 +64,9 @@ namespace HK.STG.DanmakuSystems
             var currentParameter = this.CurrentParameter;
             var bullet = BulletPool.Rent(currentParameter.BulletPrefab);
             bullet.Setup(null, this.cachedTransform, currentParameter.Speed);
-            this.coolTime = 0;
+            this.coolTime = currentParameter.CoolTime;
             this.parameterIndex++;
-            if (this.parameter.Parameters.Count >= this.parameterIndex)
+            if (this.parameter.Parameters.Count <= this.parameterIndex)
             {
                 this.parameterIndex = 0;
             }
