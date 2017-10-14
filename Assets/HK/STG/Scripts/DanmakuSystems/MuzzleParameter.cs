@@ -11,6 +11,16 @@ namespace HK.STG.DanmakuSystems
         private int initialCoolTime;
         public int InitialCoolTime { get { return this.initialCoolTime; } }
 
+        /// <summary>
+        /// ループする回数
+        /// </summary>
+        /// <remarks>
+        /// <c>0</c>の場合は無限ループ
+        /// </remarks>
+        [SerializeField]
+        private int loop;
+        public int Loop { get { return this.loop; } }
+
         [SerializeField]
         private List<Parameter> parameters;
 

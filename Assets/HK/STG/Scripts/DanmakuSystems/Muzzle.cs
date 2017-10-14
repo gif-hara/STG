@@ -1,6 +1,7 @@
 ﻿using System;
 using HK.STG.Events;
 using HK.STG.ObjectPools;
+using NUnit.Framework.Constraints;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace HK.STG.DanmakuSystems
         private int coolTime;
 
         private int parameterIndex;
+
+        private int loop;
 
         private IDisposable fireStream;
 
@@ -43,6 +46,7 @@ namespace HK.STG.DanmakuSystems
         public void Attach(IMessageBroker broker)
         {
             this.parameterIndex = 0;
+            this.loop = 0;
             this.coolTime = this.parameter.InitialCoolTime;
             
             if (this.fireStream != null)
@@ -51,7 +55,7 @@ namespace HK.STG.DanmakuSystems
             }
             
             this.fireStream = broker.Receive<Fire>()
-                .Where(_ => this.coolTime <= 0)
+                .Where(_ => this.CanFire)
                 .SubscribeWithState(this, (_, _this) =>
                 {
                     _this.Fire();
@@ -69,6 +73,20 @@ namespace HK.STG.DanmakuSystems
             if (this.parameter.Parameters.Count <= this.parameterIndex)
             {
                 this.parameterIndex = 0;
+                this.loop++;
+            }
+        }
+
+        private bool CanFire
+        {
+            get
+            {
+                if (this.parameter.Loop > 0 && this.loop >= this.parameter.Loop)
+                {
+                    return false;
+                }
+                
+                return this.coolTime <= 0;
             }
         }
 
