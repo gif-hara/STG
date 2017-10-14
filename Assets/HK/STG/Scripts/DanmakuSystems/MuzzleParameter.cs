@@ -30,6 +30,13 @@ namespace HK.STG.DanmakuSystems
             get { return this.parameters; }
         }
 
+        #if UNITY_EDITOR
+        void OnValidate()
+        {
+            this.parameters.ForEach(p => p.OnValidate());
+        }
+        #endif
+
         [Serializable]
         public class Parameter
         {
@@ -52,10 +59,26 @@ namespace HK.STG.DanmakuSystems
             [SerializeField]
             private Range angle;
             public Range Angle { get { return this.angle; } }
+
+            [SerializeField]
+            private int number;
+            public int Number { get { return this.number; } }
+
+            [SerializeField]
+            private float range;
+            public float Range { get { return this.range; } }
             
             [SerializeField]
             private int coolTime;
             public int CoolTime { get { return this.coolTime; } }
+
+#if UNITY_EDITOR
+            public void OnValidate()
+            {
+                this.number = Mathf.Max(this.number, 1);
+                this.coolTime = Mathf.Max(this.coolTime, 0);
+            }
+#endif
         }
     }
 }

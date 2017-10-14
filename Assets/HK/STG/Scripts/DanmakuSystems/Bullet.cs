@@ -59,10 +59,10 @@ namespace HK.STG.DanmakuSystems
             }
         }
 
-        public void Setup(Transform parent, Transform muzzle, float speed)
+        public void Setup(Transform parent, Transform muzzle, float speed, float fixedAngle)
         {
             this.Character.CachedTransform.position = muzzle.position;
-            this.Character.CachedTransform.rotation = muzzle.rotation;
+            this.Character.CachedTransform.rotation = muzzle.rotation * Quaternion.AngleAxis(fixedAngle, Vector3.forward);
             this.speed = speed;
             GameWorld.AddScreenOutMonitor(this.Character.Broker, this.Character.CachedTransform, Vector2.zero);
         }

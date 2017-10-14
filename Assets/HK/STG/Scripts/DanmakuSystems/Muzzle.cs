@@ -72,8 +72,21 @@ namespace HK.STG.DanmakuSystems
                 this.cachedTransform.up = GameWorld.Instance.Player.CachedTransform.position - this.cachedTransform.position;
             }
             this.ChangeAngle(currentParameter);
-            var bullet = BulletPool.Rent(currentParameter.BulletPrefab);
-            bullet.Setup(null, this.cachedTransform, currentParameter.Speed.Random);
+
+            if (currentParameter.Number == 1)
+            {
+                InstantiateBullet(currentParameter, 0);
+            }
+            else
+            {
+                var halfRange = currentParameter.Range / 2.0f;
+                var splitRange = currentParameter.Range / (currentParameter.Number - 1);
+                for (var i = 0; i < currentParameter.Number; ++i)
+                {
+                    InstantiateBullet(currentParameter, -halfRange + (splitRange * i));
+                }
+            }
+
             this.coolTime = currentParameter.CoolTime;
             this.parameterIndex++;
             if (this.parameter.Parameters.Count <= this.parameterIndex)
@@ -81,6 +94,14 @@ namespace HK.STG.DanmakuSystems
                 this.parameterIndex = 0;
                 this.loop++;
             }
+        }
+
+        private Bullet InstantiateBullet(MuzzleParameter.Parameter parameter, float fixedAngle)
+        {
+            var bullet = BulletPool.Rent(parameter.BulletPrefab);
+            bullet.Setup(null, this.cachedTransform, parameter.Speed.Random, fixedAngle);
+
+            return bullet;
         }
 
         private bool CanFire
