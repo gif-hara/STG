@@ -2,9 +2,7 @@
 using HK.STG.Events;
 using HK.STG.GameSystems;
 using HK.STG.ObjectPools;
-using NUnit.Framework.Constraints;
 using UniRx;
-using UniRx.Triggers;
 using UnityEngine;
 
 namespace HK.STG.DanmakuSystems
