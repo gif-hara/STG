@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HK.Framework.EventSystems;
 using HK.STG.CharacterControllers;
 using HK.STG.Events;
 using UniRx;
@@ -18,6 +19,8 @@ namespace HK.STG.GameSystems
         [SerializeField]
         private GameObject hoge;
 
+        public Character Player { private set; get; }
+
         /// <summary>
         /// 画面外検出を行うオブジェクト
         /// </summary>
@@ -27,6 +30,13 @@ namespace HK.STG.GameSystems
         {
             Assert.IsNull(Instance);
             Instance = this;
+
+            UniRxEvent.GlobalBroker.Receive<PlayerSpawned>()
+                .SubscribeWithState(this, (p, _this) =>
+                {
+                    _this.Player = p.Player;
+                })
+                .AddTo(this);
 
 //            this.UpdateAsObservable()
 //                .Where(this.CanUpdate)
