@@ -46,10 +46,16 @@ namespace HK.STG.DanmakuSystems
             public Range Speed { get { return this.speed; } }
 
             [SerializeField]
+            private AngleModifyType angleModifyType;
+            public AngleModifyType AngleModifyType { get { return this.angleModifyType; } }
+
+            [SerializeField]
+            private Range angle;
+            public Range Angle { get { return this.angle; } }
+            
+            [SerializeField]
             private int coolTime;
             public int CoolTime { get { return this.coolTime; } }
-            
-            
         }
     }
 }

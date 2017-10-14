@@ -18,6 +18,10 @@ MonoBehaviour:
       type: 2}
     lookAtPlayer: 0
     speed:
-      Min: 10
-      Max: 10
+      Min: 1
+      Max: 1
+    angleModifyType: 2
+    angle:
+      Min: 6
+      Max: 6
     coolTime: 0

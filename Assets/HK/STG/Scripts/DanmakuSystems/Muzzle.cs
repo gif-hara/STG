@@ -71,6 +71,7 @@ namespace HK.STG.DanmakuSystems
             {
                 this.cachedTransform.up = GameWorld.Instance.Player.CachedTransform.position - this.cachedTransform.position;
             }
+            this.ChangeAngle(currentParameter);
             var bullet = BulletPool.Rent(currentParameter.BulletPrefab);
             bullet.Setup(null, this.cachedTransform, currentParameter.Speed.Random);
             this.coolTime = currentParameter.CoolTime;
@@ -92,6 +93,21 @@ namespace HK.STG.DanmakuSystems
                 }
                 
                 return this.coolTime <= 0;
+            }
+        }
+
+        private void ChangeAngle(MuzzleParameter.Parameter parameter)
+        {
+            switch (parameter.AngleModifyType)
+            {
+                case AngleModifyType.None:
+                    break;
+                case AngleModifyType.Set:
+                    this.cachedTransform.rotation = Quaternion.AngleAxis(parameter.Angle.Random, Vector3.forward);
+                    break;
+                case AngleModifyType.Add:
+                    this.cachedTransform.rotation *= Quaternion.AngleAxis(parameter.Angle.Random, Vector3.forward);
+                    break;
             }
         }
 

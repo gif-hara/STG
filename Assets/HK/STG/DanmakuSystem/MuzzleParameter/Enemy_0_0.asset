@@ -16,71 +16,111 @@ MonoBehaviour:
   parameters:
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
-    coolTime: 5
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
+    coolTime: 1
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 1
+    lookAtPlayer: 0
     speed:
       Min: 1
       Max: 1
+    angleModifyType: 2
+    angle:
+      Min: 4
+      Max: 4
     coolTime: 60
