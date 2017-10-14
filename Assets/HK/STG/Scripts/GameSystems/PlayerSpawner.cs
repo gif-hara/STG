@@ -10,7 +10,7 @@ namespace HK.STG.GameSystems
         [SerializeField]
         private Character prefab;
 
-        void Awake()
+        void Start()
         {
             var player = Instantiate(this.prefab);
             player.CachedTransform.position = this.transform.position;

@@ -37,6 +37,10 @@ namespace HK.STG.DanmakuSystems
             public Bullet BulletPrefab { get { return this.bulletPrefab; } }
 
             [SerializeField]
+            private bool lookAtPlayer;
+            public bool LookAtPlayer { get { return this.lookAtPlayer; } }
+
+            [SerializeField]
             private float speed;
             public float Speed { get { return this.speed; } }
 

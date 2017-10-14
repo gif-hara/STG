@@ -12,16 +12,55 @@ MonoBehaviour:
   m_Name: Enemy_0_0
   m_EditorClassIdentifier: 
   initialCoolTime: 0
+  loop: 0
   parameters:
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
+    lookAtPlayer: 1
     speed: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
+    lookAtPlayer: 1
     speed: 1.2
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
+    lookAtPlayer: 1
     speed: 1.4
+    coolTime: 5
+  - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
+      type: 2}
+    lookAtPlayer: 1
+    speed: 1.6
+    coolTime: 5
+  - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
+      type: 2}
+    lookAtPlayer: 1
+    speed: 1.8
+    coolTime: 5
+  - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
+      type: 2}
+    lookAtPlayer: 1
+    speed: 2
+    coolTime: 5
+  - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
+      type: 2}
+    lookAtPlayer: 1
+    speed: 2.2
+    coolTime: 5
+  - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
+      type: 2}
+    lookAtPlayer: 1
+    speed: 2.4
+    coolTime: 5
+  - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
+      type: 2}
+    lookAtPlayer: 1
+    speed: 2.6
+    coolTime: 5
+  - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
+      type: 2}
+    lookAtPlayer: 1
+    speed: 2.8
     coolTime: 60

@@ -1,5 +1,6 @@
 ﻿using System;
 using HK.STG.Events;
+using HK.STG.GameSystems;
 using HK.STG.ObjectPools;
 using NUnit.Framework.Constraints;
 using UniRx;
@@ -66,6 +67,10 @@ namespace HK.STG.DanmakuSystems
         private void Fire()
         {
             var currentParameter = this.CurrentParameter;
+            if (currentParameter.LookAtPlayer)
+            {
+                this.cachedTransform.up = GameWorld.Instance.Player.CachedTransform.position - this.cachedTransform.position;
+            }
             var bullet = BulletPool.Rent(currentParameter.BulletPrefab);
             bullet.Setup(null, this.cachedTransform, currentParameter.Speed);
             this.coolTime = currentParameter.CoolTime;
