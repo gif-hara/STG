@@ -72,7 +72,7 @@ namespace HK.STG.DanmakuSystems
                 this.cachedTransform.up = GameWorld.Instance.Player.CachedTransform.position - this.cachedTransform.position;
             }
             var bullet = BulletPool.Rent(currentParameter.BulletPrefab);
-            bullet.Setup(null, this.cachedTransform, currentParameter.Speed);
+            bullet.Setup(null, this.cachedTransform, currentParameter.Speed.Random);
             this.coolTime = currentParameter.CoolTime;
             this.parameterIndex++;
             if (this.parameter.Parameters.Count <= this.parameterIndex)

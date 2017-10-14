@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using HK.STG.Systems;
 using UnityEngine;
 
 namespace HK.STG.DanmakuSystems
@@ -41,12 +42,14 @@ namespace HK.STG.DanmakuSystems
             public bool LookAtPlayer { get { return this.lookAtPlayer; } }
 
             [SerializeField]
-            private float speed;
-            public float Speed { get { return this.speed; } }
+            private Range speed;
+            public Range Speed { get { return this.speed; } }
 
             [SerializeField]
             private int coolTime;
             public int CoolTime { get { return this.coolTime; } }
+            
+            
         }
     }
 }

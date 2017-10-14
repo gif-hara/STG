@@ -17,50 +17,70 @@ MonoBehaviour:
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 1
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 1.2
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 1.4
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 1.6
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 1.8
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 2
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 2.2
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 2.4
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 2.6
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 5
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
     lookAtPlayer: 1
-    speed: 2.8
+    speed:
+      Min: 1
+      Max: 1
     coolTime: 60

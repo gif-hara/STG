@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Name: Player_0
   m_EditorClassIdentifier: 
   initialCoolTime: 0
+  loop: 0
   parameters:
   - bulletPrefab: {fileID: 114185893595170456, guid: 1e921855c9f24455abdd81554d94146a,
       type: 2}
-    speed: 10
+    lookAtPlayer: 0
+    speed:
+      Min: 10
+      Max: 10
     coolTime: 0
