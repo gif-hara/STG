@@ -16,6 +16,8 @@ namespace HK.STG.DanmakuSystems
 
         private int coolTime;
 
+        private int parameterIndex;
+
         private IDisposable fireStream;
 
         void Awake()
@@ -45,7 +47,7 @@ namespace HK.STG.DanmakuSystems
                 this.fireStream.Dispose();
             }
             this.fireStream = broker.Receive<Fire>()
-                .Where(_ => this.coolTime >= this.parameter.CoolTime)
+                .Where(_ => this.coolTime >= this.CurrentParameter.CoolTime)
                 .SubscribeWithState(this, (_, _this) =>
                 {
                     _this.Fire();
@@ -55,9 +57,20 @@ namespace HK.STG.DanmakuSystems
         
         private void Fire()
         {
-            var bullet = BulletPool.Rent(this.parameter.BulletPrefab);
-            bullet.Setup(null, this.cachedTransform, this.parameter.Speed);
+            var currentParameter = this.CurrentParameter;
+            var bullet = BulletPool.Rent(currentParameter.BulletPrefab);
+            bullet.Setup(null, this.cachedTransform, currentParameter.Speed);
             this.coolTime = 0;
+            this.parameterIndex++;
+            if (this.parameter.Parameters.Count >= this.parameterIndex)
+            {
+                this.parameterIndex = 0;
+            }
+        }
+
+        private MuzzleParameter.Parameter CurrentParameter
+        {
+            get { return this.parameter.Parameters[this.parameterIndex]; }
         }
     }
 }

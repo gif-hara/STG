@@ -11,6 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ec26c619a3e479ba44672ae67cf2ce, type: 3}
   m_Name: Player_0
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 114843365344635184, guid: 8fcbf0081121946f3b168e8536d74edf,
-    type: 2}
-  speed: 10
+  initialCoolTime: 0
+  parameters:
+  - bulletPrefab: {fileID: 114185893595170456, guid: 1e921855c9f24455abdd81554d94146a,
+      type: 2}
+    speed: 10
+    coolTime: 0
