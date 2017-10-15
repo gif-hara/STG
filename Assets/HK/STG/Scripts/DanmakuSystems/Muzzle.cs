@@ -22,6 +22,8 @@ namespace HK.STG.DanmakuSystems
 
         private IDisposable fireStream;
 
+        private IMessageBroker broker;
+
         void Awake()
         {
             this.cachedTransform = this.transform;
@@ -44,6 +46,7 @@ namespace HK.STG.DanmakuSystems
         
         public void Attach(IMessageBroker broker)
         {
+            this.broker = broker;
             this.parameterIndex = 0;
             this.loop = 0;
             this.coolTime = this.parameter.InitialCoolTime;
@@ -91,6 +94,10 @@ namespace HK.STG.DanmakuSystems
             {
                 this.parameterIndex = 0;
                 this.loop++;
+                if (this.parameter.Loop > 0 && this.loop >= this.parameter.Loop)
+                {
+                    this.broker.Publish(CompletedMuzzle.GetCache(this));
+                }
             }
         }
 

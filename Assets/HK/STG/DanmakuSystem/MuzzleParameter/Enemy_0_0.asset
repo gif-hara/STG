@@ -12,115 +12,135 @@ MonoBehaviour:
   m_Name: Enemy_0_0
   m_EditorClassIdentifier: 
   initialCoolTime: 0
-  loop: 0
+  loop: 1
   parameters:
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 70
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 70
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 65
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 60
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 55
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 50
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 55
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 60
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 1
+      Min: 0
+      Max: 0
+    number: 5
+    range: 65
+    coolTime: 6
   - bulletPrefab: {fileID: 114185893595170456, guid: 88bf0dfd6767946879f8db9d401992c2,
       type: 2}
-    lookAtPlayer: 0
+    lookAtPlayer: 1
     speed:
-      Min: 1
-      Max: 1
-    angleModifyType: 2
+      Min: 1.4
+      Max: 1.4
+    angleModifyType: 0
     angle:
-      Min: 4
-      Max: 4
-    coolTime: 60
+      Min: 0
+      Max: 0
+    number: 5
+    range: 70
+    coolTime: 6
